@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--File Creator: Erick Ruscitti
+email: erirusci@uat.edu
+for CSC102 class spring 2021-->
+<html>
+
+<head>
+    <!--this links my CSS page that sets the page background and color of the buttons-->
+    <link href="space.css" rel="stylesheet" type="text/css" />
+    <!--This is what gets displayed on the tab,
+    it is not shown on the actual page-->
+    <title>
+        UAT Space Page
+    </title>
+</head>
+
+<body>
+    <!--this inserts the picture at the top of the page-->
+    <img src="UATspaceLogo-1.jpg">
+    <!--this is for the header UAT Space program and sets the font color-->
+    <h1 style=color:rebeccapurple>
+        UAT Space Program
+        <br>
+        <br>
+        <br>
+        <!--this is the paragraph and sets the color of the font-->
+        <p style=color:rebeccapurple>
+            Test of the paragraph tags
+        </p>
+        <br>
+        <br>
+        <!--this is the header for Countdown timer as well as sets the font color-->
+        <h2 style=color:rebeccapurple>
+            Countdown Timer
+        </h2>
+        <!--This identifies the countdown timer-->
+        <p id="countdownTimer">The Countdown starts here...</p>
+        <br>
+        <br>
+        <!--this is the button with the function to start the timer-->
+        <button class="Buttons" onclick="simpleCount();">Start</button>
+        <button class="Buttons">Stop</button>
+        <!--this is the script for the countdown-->
+        <script>
+            //this is for the countdown function from 10 to 1 then blastoff
+            function simpleCount() {
+                //this line sets the start of the countdown
+                var currTime = 10;
+                //this line set the amount of times and if less than 12 to add i to itself
+                for (var i = 0; i < 10; i++) {
+                    //this displays the time left message
+                    setTimeout(function () {
+                        document.getElementById("countdownTimer").innerHTML = "The time left is " + currTime;
+                        currTime = currTime - 1;
+                    }, 1000 * i);
+                }
+
+                setTimeout(function () {
+                        document.getElementById("countdownTimer").innerHTML = "Blastoff!!!";
+                        currTime = currTime;
+                    }, 10000);
+            }
+        </script>
+</body>
+
+</html>
